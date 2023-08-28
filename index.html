@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ronaldinho Tribute Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="tribute page for freeCodeCamp responsive web design certificate" />
+    <meta name="keywords" content="freeCodeCamp, tribute page, responsive web design certificate" />
+    <meta name="author" content="Josue" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./dist/styles.min.css">
+</head>
+
+<body>
+
+    <main id="main">
+
+        <!-- introduction -->
+        <section class="container-fluid text-center py-4">
+
+            <!-- header -->
+            <header>
+                <h1 id="title" class="display-3">Ronaldinho Gaúcho</h1>
+                <p class="lead">
+                    One of the greatest playmakers of all time.
+                </p>
+            </header>
+
+            <!-- image -->
+            <div role="img">
+                <figure id="img-div" class="figure">
+                    <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/6/63/Ronaldinho061115-01.jpg"
+                        alt="Ronaldinho with Brazil in 2006" id="img" class="figure-img img-fluid">
+                    <figcaption id="img-caption" class="figure-caption">
+                        <p class="mb-0">Ronaldinho with Brazil in 2006</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Ronaldinho061115-01.jpg" target="_blank">Reto
+                            Stauffer, www.hopp-schwiiz.ch</a>, <a
+                            href="https://creativecommons.org/licenses/by-sa/2.0/de/deed.en" target="_blank">CC BY-SA
+                            2.0 DE</a>, via Wikimedia Commons
+                    </figcaption>
+                </figure>
+            </div>
+
+        </section>
+
+        <!-- accomplishments -->
+        <section class="container-fluid bg-light">
+
+            <h2 class="display-4 text-center py-4">Accomplishments</h2>
+
+            <!-- achievements list -->
+            <div class="row justify-content-center pb-5">
+                <div id="tribute-info" class="col-sm-10 col-md-6 bg-white py-5">
+                    <p class="lead text-center fw-bold mb-4">Here is a timeline of achievements:</p>
+                    <ul class="list-group"></ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- quotes -->
+        <section class="container-fluid">
+
+            <h2 class="display-4 text-center py-4">Reputation</h2>
+
+            <div class="row justify-content-center pb-5">
+                <div class="col-sm-10 col-md-6">
+                    <div class="card">
+                        <div class="card-header fw-bold">
+                            What other legends have to say
+                        </div>
+                        <div class="card-body py-4">
+                            <blockquote class="blockquote mb-0">
+                                <p></p>
+                                <footer class="blockquote-footer">
+                                    <cite title="Source Title"></cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button id="prev" type="button" class="btn">
+                                <img src="./assets/arrow-left-circle-fill.svg" alt="arrow left">
+                                Prev
+                            </button>
+                            <button id="next" type="button" class="btn">
+                                Next
+                                <img src="./assets/arrow-right-circle-fill.svg" alt="arrow right">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- link -->
+        <section class="container-fluid bg-light py-5 text-center">
+            <p class="fs-3">You can read more about this amazing footballer on <a id="tribute-link"
+                    href="https://en.wikipedia.org/wiki/Ronaldinho" target="_blank">Wikipedia</a>.</p>
+        </section>
+
+    </main>
+    <script>
+        // list of achievements
+        const achievements =
+            [
+                {
+                    year: 1999,
+                    info: "Copa América Win - Ronaldinho made his international breakthrough by winning the Copa América with the Brazilian national team."
+                },
+                {
+                    year: 2004,
+                    info: "UEFA Champions League - Ronaldinho won the UEFA Champions League title with FC Barcelona, playing a pivotal role in their victory."
+                },
+                {
+                    year: 2004,
+                    info: "FIFA World Player of the Year - He received his first FIFA World Player of the Year award, establishing himself as one of the best players in the world."
+                },
+                {
+                    year: 2005,
+                    info: "La Liga Title - Ronaldinho helped FC Barcelona win the La Liga title, showcasing his exceptional skills and creativity on the field."
+                },
+                {
+                    year: 2005,
+                    info: "Ballon d'Or - He was awarded the prestigious Ballon d'Or, solidifying his status as one of the greatest footballers of his generation."
+                },
+                {
+                    year: 2006,
+                    info: "UEFA Champions League - Ronaldinho led FC Barcelona to another UEFA Champions League triumph, displaying his mesmerizing style of play."
+                },
+                {
+                    year: 2007,
+                    info: "Copa América Win - He won his second Copa América with the Brazilian national team, reaffirming his importance on the international stage."
+                },
+                {
+                    year: 2010,
+                    info: "Serie A Title - Ronaldinho won the Serie A title with AC Milan, contributing to the team's success in Italy."
+                },
+                {
+                    year: 2013,
+                    info: "Copa Libertadores - He won the Copa Libertadores, South America's most prestigious club competition, with Atlético Mineiro."
+                },
+                {
+                    year: 2013,
+                    info: "Brazil's Sportsman of the Year - In recognition of his illustrious career, Ronaldinho was named Brazil's Sportsman of the Year."
+                }
+            ]
+        const ulElement = document.querySelector("ul");
+        ulElement.innerHTML = achievements.map((el) => {
+            return `<li class="list-group-item border-0"><b>${el.year}</b> - ${el.info}</li>`
+        }).join("");
+
+        // quotes
+        const quotes =
+            [
+                {
+                    person: "Lionel Messi",
+                    quote: "Ronaldinho was the reason I came to Barcelona. His happiness, his magic with the ball. It was unique. He's an idol."
+                },
+                {
+                    person: "Zinedine Zidane",
+                    quote: "Ronaldinho is the embodiment of joy on the football pitch."
+                },
+                {
+                    person: "Andres Iniesta",
+                    quote: "Ronaldinho was a player who changed history. He brought a new dimension to Barcelona."
+                },
+                {
+                    person: "Carles Puyol",
+                    quote: "Ronaldinho was a genius. His technical ability was incredible. He saw things on the field that most players could only dream of."
+                },
+                {
+                    person: "Diego Maradona",
+                    quote: "I have seen the player who will inherit my place in Argentine football and his name is Ronaldinho."
+                },
+                {
+                    person: "Roberto Carlos",
+                    quote: "The best player I have played with is Ronaldo, but the best player I have played against is Ronaldinho."
+                },
+                {
+                    person: "Frank Rijkaard",
+                    quote: "Ronaldinho is one of the most brilliant players in the world. There's no other player like him. He adds fantasy to the game."
+                },
+                {
+                    person: "George Weah",
+                    quote: "Ronaldinho is the master. He does things I have never seen before and will never see again."
+                },
+                {
+                    person: "Ronald Koeman",
+                    quote: "Ronaldinho was the best player I ever coached. His understanding of the game, his vision, his execution - everything was top class."
+                }
+            ]
+        // create a counter element to change quotes
+        let counter = 0;
+        // get, and set paragraph element
+        const paragraphElement = document.querySelector(".blockquote p");
+        paragraphElement.textContent = quotes[counter].quote;
+        // get, and set cite element
+        const citeElement = document.querySelector("cite");
+        citeElement.textContent = quotes[counter].person;
+        // get buttons
+        const next = document.querySelector("#next");
+        const prev = document.querySelector("#prev");
+        // click event for the next button
+        next.onclick = () => {
+            counter = add(counter); // Update the counter with the new value returned by add
+            paragraphElement.textContent = quotes[counter].quote;
+            citeElement.textContent = quotes[counter].person;
+        }
+        // click event for the previous button
+        prev.onclick = () => {
+            counter = subtract(counter);
+            paragraphElement.textContent = quotes[counter].quote;
+            citeElement.textContent = quotes[counter].person;
+        }
+        // function to increase the counter
+        const add = (integer) => {
+            integer++;
+            if (integer >= quotes.length) integer = 0;
+            return integer;
+        }
+        // function to decrease the counter
+        const subtract = (integer) => {
+            integer--;
+            if (integer < 0) integer = quotes.length - 1;
+            return integer;
+        }
+    </script>
+</body>
+
+</html>

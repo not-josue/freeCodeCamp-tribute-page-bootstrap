@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+// google font
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
+$font-family-sans-serif: 'Raleway', sans-serif;
+
+// aligns images in buttons
+button img {
+    vertical-align: text-top !important;
+}
+
+// requirement for freeCodeCamp
+#image {
+    display: block;
+}
+
+// bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
